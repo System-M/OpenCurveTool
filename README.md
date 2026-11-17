@@ -1,27 +1,26 @@
 # Open Curve Tool
 
-**Deutsch** · [English](README.en.md)
+[Deutsch](README.de.md) · **English**
 
 *Open-source desktop tool for combustion indicating analysis of two cylinders (High / Low):
 cylinder pressure, heat release, knock, knock sensor and injector/valve current. Python, PySide6
-and pyqtgraph; runs on Windows and Linux. The user interface is in English; the documentation is
-available in German and in English.*
+and pyqtgraph; runs on Windows and Linux. The user interface is in English.*
 
 ![Open Curve Tool](referenz/opencurvetool_overview.png)
 
-Auswertung von Indizierdaten für zwei Zylinder („High“ und „Low“): Zylinderdruck, Heizverlauf,
-Klopfen, Klopfsensor und PI-Strom. Funktionsumfang und Bedienung sind an die klassische
-Concerto-Oberfläche angelehnt. Die vollständige Beschreibung steht in
-[SPEZIFIKATION.md](SPEZIFIKATION.md) (maßgebliche Fassung; englische Übersetzung:
-[SPECIFICATION.en.md](SPECIFICATION.en.md)).
+Evaluation of indicating data for two cylinders ("High" and "Low"): cylinder pressure, heat
+release, knock, knock sensor and PI current. Functionality and operation are modelled on the
+classic Concerto user interface. The full description is in
+[SPECIFICATION.en.md](SPECIFICATION.en.md) (English translation of the German reference
+[SPEZIFIKATION.md](SPEZIFIKATION.md)).
 
-> **Stand:** frühe Version. Geprüft wurde bisher ausschließlich mit synthetischen Messungen; der
-> Abgleich mit echten Messdaten und mit Concerto steht aus. Die voreingestellten Motordaten sind
-> teilweise Annahmen (siehe unten).
+> **Status:** early version. So far it has been verified only with synthetic measurements; the
+> comparison with real measurement data and with Concerto is still open. The preset engine data
+> are partly assumptions (see below).
 
 ## Installation
 
-Python 3.11 oder neuer, unter Windows und Linux gleich:
+Python 3.11 or newer, the same on Windows and Linux:
 
 ```
 python -m venv .venv
@@ -31,76 +30,77 @@ python -m venv .venv
 ## Start
 
 ```
-python opencurve.py                         Oberfläche
-python opencurve.py messung.csv             Oberfläche mit geladener Messung
-python opencurve.py --batch messung.csv     Auswertung ohne Oberfläche
+python opencurve.py                         user interface
+python opencurve.py measurement.csv         user interface with a loaded measurement
+python opencurve.py --batch measurement.csv evaluation without user interface
 ```
 
-Der Stapellauf schreibt nach `<messung>_results/` (oder `--out`): Zykluskennwerte, Statistik,
-mittlere Verläufe, Protokoll und einen HTML-Bericht mit Diagrammen. Weitere Optionen:
-`--config motor.toml`, `--cyl H,L`, `--cycles 10:200`, `--no-plots`, `--save-cycles`, `-v`.
-Rückgabewert 0 = ok, 1 = Eingabefehler, 2 = keine auswertbaren Zyklen.
+The batch run writes to `<measurement>_results/` (or `--out`): cycle values, statistics, mean
+curves, a log and an HTML report with diagrams. Further options:
+`--config engine.toml`, `--cyl H,L`, `--cycles 10:200`, `--no-plots`, `--save-cycles`, `-v`.
+Exit code 0 = ok, 1 = input error, 2 = no evaluable cycles.
 
-## Eingabedatei
+## Input file
 
-CSV mit den Spalten `Time, CA High, CA Low, DMR_L, DMR_H, PI_RM_L, PI_RM_H, KLS_H, KLS_L`
-(Groß-/Kleinschreibung und Reihenfolge sind egal).
-`Time` und die Kurbelwinkel sind Pflicht; `DMR_*`, `PI_RM_*` und `KLS_*` dürfen fehlen, dann
-verringert sich nur der Auswertumfang des betroffenen Zylinders. Trenn- und Dezimalzeichen werden erkannt, die
-Abtastrate wird aus `Time` bestimmt.
+CSV with the columns `Time, CA High, CA Low, DMR_L, DMR_H, PI_RM_L, PI_RM_H, KLS_H, KLS_L`
+(upper/lower case and column order do not matter).
+`Time` and the crank angles are required; `DMR_*`, `PI_RM_*` and `KLS_*` may be missing, in which
+case only the scope of evaluation of the affected cylinder is reduced. Delimiter and decimal sign
+are detected, the sample rate is determined from `Time`.
 
-- `DMR_*`: Rohspannung in Volt, Voreinstellung 10 mV/bar (einstellbar je Zylinder)
-- `PI_RM_*`: Strom in Ampere; ein konstanter Offset wird je Zyklus bestimmt und abgezogen
-- `KLS_*`: Klopfsensor (Annahme: Körperschall in Volt); ausgewertet im Klopfband wie der Druck
-- `CA *`: 0–720 °KW, der Wert 0 ist der Zünd-OT des jeweiligen Zylinders
+- `DMR_*`: raw voltage in volts, default 10 mV/bar (adjustable per cylinder)
+- `PI_RM_*`: current in amperes; a constant offset is determined per cycle and subtracted
+- `KLS_*`: knock sensor (assumption: structure-borne sound in volts); evaluated in the knock band
+  like the pressure
+- `CA *`: 0–720 °CA, the value 0 is the firing TDC of the respective cylinder
 
-## Bedienung in Kürze
+## Operation at a glance
 
-| Aufgabe | Weg |
+| Task | How |
 |---|---|
-| Messung laden | `File > Open Measurement`, Datei auf das Fenster ziehen oder WorkFlow „Data Access“ |
-| Kurve anzeigen | Kanal aus dem Channel Browser (rechts) ins Diagramm ziehen; rechter Rand = neue y-Achse, unterer Rand = neuer Achsbereich |
-| Zyklus wählen | Zahlenfeld „Cycle“ und Schieberegler rechts unten; `Bild auf` / `Bild ab` blättern, `F5` spielt ab |
-| Darstellung | Auswahlfeld in der Statuszeile: Single, Range, All, Mean, Envelope |
-| Messcursor | Rote Linie ziehen oder Pfeiltasten; `F6` schaltet den zweiten Cursor zu |
-| Zoom | Rechteck aufziehen, Mausrad; `Backspace` = Zoom Back, `Pos1` = Show All |
-| Objekte anordnen | `F4` (Design), dann verschieben und an den Rändern ziehen |
-| Eigenschaften | Doppelklick auf ein Objekt |
-| Einstellungen | Menü `Extras`: Engine Parameters, Channel Scaling, Evaluation, PI Detection, Knock |
-| Formelkanal | Symbolleiste „Calculator“ oder „Formula Editor“, z. B. `DIMEP [bar] = IMEP_H - IMEP_L` |
-| Neu rechnen | `F9`; nach „Apply“ in den Einstellungen geschieht das automatisch |
-| Export | `File > Export`: Seite als PNG/PDF, Kurvendaten als CSV, Ergebnisse und Bericht |
+| Load a measurement | `File > Open Measurement`, drag a file onto the window, or WorkFlow "Data Access" |
+| Show a curve | Drag a channel from the Channel Browser (right) into the diagram; right edge = new y axis, bottom edge = new axis area |
+| Select a cycle | Number field "Cycle" and slider at the bottom right; `Page Up` / `Page Down` step through, `F5` plays |
+| Display mode | Selection box in the status bar: Single, Range, All, Mean, Envelope |
+| Measurement cursor | Drag the red line or use the arrow keys; `F6` switches the second cursor on |
+| Zoom | Draw a rectangle, mouse wheel; `Backspace` = Zoom Back, `Home` = Show All |
+| Arrange objects | `F4` (Design), then move them and drag the borders |
+| Properties | Double-click an object |
+| Settings | Menu `Extras`: Engine Parameters, Channel Scaling, Evaluation, PI Detection, Knock |
+| Formula channel | Tool bar "Calculator" or "Formula Editor", e.g. `DIMEP [bar] = IMEP_H - IMEP_L` |
+| Recalculate | `F9`; after "Apply" in the settings this happens automatically |
+| Export | `File > Export`: page as PNG/PDF, curve data as CSV, results and report |
 
-## Voreinstellungen, die zu prüfen sind
+## Defaults that need checking
 
-- **Motordaten:** Jenbacher Typ 6 mit Bohrung 190 mm und Hub 220 mm (veröffentlicht). Pleuellänge
-  425 mm und Verdichtung 11,0 sind **Annahmen**. Solange „Engine data are assumptions“ gesetzt ist,
-  kennzeichnet der Bericht die Thermodynamik-Kennwerte entsprechend.
-- **Klopfschwelle:** 1,0 bar im Band 2–10 kHz ist eine Annahme.
-- **Kurbelwinkelstufen:** Der ganzzahlige Dateiwert wird als „abgeschnitten“ gedeutet
-  (`step_mode = floor`). Ist er gerundet, verschiebt das alle Winkel um 0,5 °KW; umstellbar unter
-  `Extras > Evaluation`.
+- **Engine data:** Jenbacher Type 6 with 190 mm bore and 220 mm stroke (published). Conrod length
+  425 mm and compression ratio 11.0 are **assumptions**. As long as "Engine data are assumptions"
+  is set, the report marks the thermodynamic values accordingly.
+- **Knock threshold:** 1.0 bar in the band 2–10 kHz is an assumption.
+- **Crank angle steps:** The integer file value is interpreted as "truncated"
+  (`step_mode = floor`). If it is rounded, all angles are shifted by 0.5 °CA; this can be changed
+  under `Extras > Evaluation`.
 
-## Tests und Testdaten
+## Tests and test data
 
 ```
-python -m pytest tests                                       54 Tests, ohne Bildschirm lauffähig
-python tests/make_testdata.py data/demo_30k.csv              synthetische Messung im Referenzformat
+python -m pytest tests                                       54 tests, run without a screen
+python tests/make_testdata.py data/demo_30k.csv              synthetic measurement in the reference format
 python tests/make_testdata.py data/demo_150k.csv --fs 150000 --duration 4
 ```
 
-Zu jeder synthetischen Messung entsteht eine Datei `*_truth.json` mit den Sollwerten. Geprüft wurde
-bisher ausschließlich mit synthetischen Daten; der Abgleich mit einer echten Messung und mit
-Concerto steht aus.
+A file `*_truth.json` with the reference values is created for every synthetic measurement. So far
+verification was done exclusively with synthetic data; the comparison with a real measurement and
+with Concerto is still open.
 
-## Lizenz und Hinweise
+## License and notes
 
 Copyright (C) 2026 System-M
 
-Dieses Programm ist freie Software unter der [GNU General Public License, Version 3](LICENSE).
-Es wird ohne jede Gewährleistung bereitgestellt; Ergebnisse sind vor einer Verwendung
-eigenverantwortlich zu prüfen.
+This program is free software under the [GNU General Public License, version 3](LICENSE).
+It is provided without any warranty; results must be checked on your own responsibility before
+they are used.
 
-Open Curve Tool ist ein unabhängiges Projekt und steht in keiner Verbindung zur AVL List GmbH.
-AVL und CONCERTO sind Marken ihrer jeweiligen Inhaber; das Projekt enthält weder Code noch Grafiken
-aus deren Produkten.
+Open Curve Tool is an independent project and is not affiliated with AVL List GmbH. AVL and
+CONCERTO are trademarks of their respective owners; the project contains neither code nor graphics
+from their products.
