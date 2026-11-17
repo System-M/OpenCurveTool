@@ -1,0 +1,19 @@
+# environment and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# generated measurements and results (create with tests/make_testdata.py)
+data/
+*_results/
+
+# reference material that is not published: third-party screenshot, photo of real
+# measurement data, screenshot of an earlier program
+referenz/concerto_classic.png
+referenz/beispiel_csv_ausschnitt.jpg
+referenz/concertissimo_sample.png
+
+# editors
+.idea/
+.vscode/

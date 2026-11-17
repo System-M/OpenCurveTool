@@ -1,0 +1,919 @@
+{
+ "version": 1,
+ "name": "Standard",
+ "pages": [
+  {
+   "name": "Indicating Diagram",
+   "objects": [
+    {
+     "type": "diagram",
+     "rect": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+     ],
+     "curves": [
+      {
+       "ds": "CA",
+       "name": "PCYL_H",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "PCYL_L",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      }
+     ],
+     "title": "",
+     "x": {
+      "auto": false,
+      "min": -100.0,
+      "max": 130.0
+     }
+    },
+    {
+     "type": "params",
+     "rect": [
+      0.105,
+      0.035,
+      0.12,
+      0.1
+     ],
+     "title": "Test Parameter:",
+     "names": [
+      "BORE",
+      "STROKE",
+      "CONROD",
+      "EPSILON",
+      "POLY_COEFF",
+      "NRSTROKE"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "PI Current Diagram",
+   "objects": [
+    {
+     "type": "diagram",
+     "rect": [
+      0.0,
+      0.0,
+      0.6,
+      1.0
+     ],
+     "curves": [
+      {
+       "ds": "CA",
+       "name": "PI_H",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "PI_L",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "PCYL_H",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "PCYL_L",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      }
+     ],
+     "title": "",
+     "x": {
+      "auto": false,
+      "min": -90.0,
+      "max": 60.0
+     }
+    },
+    {
+     "type": "diagram",
+     "rect": [
+      0.61,
+      0.0,
+      0.39,
+      0.5
+     ],
+     "curves": [
+      {
+       "ds": "CY",
+       "name": "PI_SOE_1_H",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CY",
+       "name": "PI_SOE_1_L",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CY",
+       "name": "PI_DUR_1_H",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CY",
+       "name": "PI_DUR_1_L",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      }
+     ],
+     "title": "Start and duration of energizing",
+     "x": {
+      "auto": true,
+      "min": 0.0,
+      "max": 1.0
+     }
+    },
+    {
+     "type": "table",
+     "rect": [
+      0.61,
+      0.51,
+      0.39,
+      0.49
+     ],
+     "columns": [
+      "PI_SOE_1_H",
+      "PI_DUR_1_H",
+      "PI_IPK_1_H",
+      "PI_SOE_1_L",
+      "PI_DUR_1_L",
+      "PI_IPK_1_L"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Cycle Diagram",
+   "objects": [
+    {
+     "type": "diagram",
+     "rect": [
+      0.0,
+      0.0,
+      0.55,
+      1.0
+     ],
+     "curves": [
+      {
+       "ds": "CY",
+       "name": "IMEP_H",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CY",
+       "name": "IMEP_L",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CY",
+       "name": "PMAX_H",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CY",
+       "name": "PMAX_L",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CY",
+       "name": "AI50_H",
+       "file": "active",
+       "strip": 2,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CY",
+       "name": "AI50_L",
+       "file": "active",
+       "strip": 2,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      }
+     ],
+     "title": "",
+     "x": {
+      "auto": true,
+      "min": 0.0,
+      "max": 1.0
+     }
+    },
+    {
+     "type": "text",
+     "rect": [
+      0.56,
+      0.0,
+      0.44,
+      0.17
+     ],
+     "size": 9,
+     "text": "{FILENAME} - cycle {CYCLE} of {NCYCLES}\nIMEP High {STAT:IMEP_H} bar / Low {STAT:IMEP_L} bar\nPMAX High {STAT:PMAX_H} bar / Low {STAT:PMAX_L} bar\nAI50 High {STAT:AI50_H} deg / Low {STAT:AI50_L} deg\nKnocking cycles High {STAT:KNOCK_FREQ_H} % / Low {STAT:KNOCK_FREQ_L} %"
+    },
+    {
+     "type": "stats",
+     "rect": [
+      0.56,
+      0.18,
+      0.44,
+      0.82
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Heat Release Diagram",
+   "objects": [
+    {
+     "type": "diagram",
+     "rect": [
+      0.0,
+      0.0,
+      0.62,
+      1.0
+     ],
+     "curves": [
+      {
+       "ds": "CA",
+       "name": "PCYL_H",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "PCYL_L",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "Q_H",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "Q_L",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "I_H",
+       "file": "active",
+       "strip": 2,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "I_L",
+       "file": "active",
+       "strip": 2,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      }
+     ],
+     "title": "",
+     "x": {
+      "auto": false,
+      "min": -40.0,
+      "max": 100.0
+     }
+    },
+    {
+     "type": "diagram",
+     "rect": [
+      0.63,
+      0.0,
+      0.37,
+      0.5
+     ],
+     "curves": [
+      {
+       "ds": "CA",
+       "name": "PCYL_H",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "mean",
+       "visible": true,
+       "xname": "V_H"
+      },
+      {
+       "ds": "CA",
+       "name": "PCYL_L",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "mean",
+       "visible": true,
+       "xname": "V_L"
+      }
+     ],
+     "title": "p-V, mean cycle (log-log)",
+     "x": {
+      "auto": true,
+      "min": 0.0,
+      "max": 1.0
+     },
+     "logx": true,
+     "axes": {
+      "0:0": {
+       "auto": true,
+       "min": 1.0,
+       "max": 200.0,
+       "log": true
+      }
+     }
+    },
+    {
+     "type": "table",
+     "rect": [
+      0.63,
+      0.51,
+      0.37,
+      0.49
+     ],
+     "columns": [
+      "PMAX_H",
+      "IMEP_H",
+      "AI50_H",
+      "PMAX_L",
+      "IMEP_L",
+      "AI50_L"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Knock Diagram",
+   "objects": [
+    {
+     "type": "diagram",
+     "rect": [
+      0.0,
+      0.0,
+      0.6,
+      1.0
+     ],
+     "curves": [
+      {
+       "ds": "CA",
+       "name": "PCYL_H",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "PCYL_L",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "PKNK_H",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "PKNK_L",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "KLS_H",
+       "file": "active",
+       "strip": 2,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "KLS_L",
+       "file": "active",
+       "strip": 2,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      }
+     ],
+     "title": "",
+     "x": {
+      "auto": false,
+      "min": -20.0,
+      "max": 80.0
+     }
+    },
+    {
+     "type": "diagram",
+     "rect": [
+      0.61,
+      0.0,
+      0.39,
+      0.5
+     ],
+     "curves": [
+      {
+       "ds": "CY",
+       "name": "KP_PK_H",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CY",
+       "name": "KP_PK_L",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CY",
+       "name": "KLS_PK_H",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CY",
+       "name": "KLS_PK_L",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      }
+     ],
+     "title": "Knock peak per cycle: pressure and knock sensor",
+     "x": {
+      "auto": true,
+      "min": 0.0,
+      "max": 1.0
+     }
+    },
+    {
+     "type": "table",
+     "rect": [
+      0.61,
+      0.51,
+      0.39,
+      0.49
+     ],
+     "columns": [
+      "KP_PK_H",
+      "KNOCK_H",
+      "KLS_PK_H",
+      "KLS_RATIO_H",
+      "KP_PK_L",
+      "KNOCK_L",
+      "KLS_PK_L",
+      "KLS_RATIO_L"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "High Low Comparison",
+   "objects": [
+    {
+     "type": "diagram",
+     "rect": [
+      0.0,
+      0.0,
+      1.0,
+      0.62
+     ],
+     "curves": [
+      {
+       "ds": "CA",
+       "name": "PCYL_H",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "envelope",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "PCYL_L",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "envelope",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "Q_H",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "mean",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "CA",
+       "name": "Q_L",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "mean",
+       "visible": true,
+       "xname": null
+      }
+     ],
+     "title": "Mean cycles with min/max envelope",
+     "x": {
+      "auto": false,
+      "min": -90.0,
+      "max": 120.0
+     }
+    },
+    {
+     "type": "table",
+     "rect": [
+      0.0,
+      0.63,
+      1.0,
+      0.37
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Raw Data",
+   "objects": [
+    {
+     "type": "diagram",
+     "rect": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+     ],
+     "curves": [
+      {
+       "ds": "TIME",
+       "name": "P_H",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "TIME",
+       "name": "P_L",
+       "file": "active",
+       "strip": 0,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "TIME",
+       "name": "PI_RM_H",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "TIME",
+       "name": "PI_RM_L",
+       "file": "active",
+       "strip": 1,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "TIME",
+       "name": "KLS_H",
+       "file": "active",
+       "strip": 2,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "TIME",
+       "name": "KLS_L",
+       "file": "active",
+       "strip": 2,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "TIME",
+       "name": "CA_H",
+       "file": "active",
+       "strip": 3,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      },
+      {
+       "ds": "TIME",
+       "name": "CA_L",
+       "file": "active",
+       "strip": 3,
+       "axis": 0,
+       "color": null,
+       "width": 1.5,
+       "style": "solid",
+       "mode": "global",
+       "visible": true,
+       "xname": null
+      }
+     ],
+     "title": "",
+     "x": {
+      "auto": true,
+      "min": 0.0,
+      "max": 1.0
+     }
+    }
+   ]
+  }
+ ],
+ "formulas": []
+}
