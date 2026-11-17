@@ -1,5 +1,7 @@
 # Open Curve Tool – Spezifikation
 
+**Deutsch** · [English](SPECIFICATION.en.md)
+
 Stand: 2026-11-17 · Status: v1.2 – umgesetzt (Umsetzungsstand und Abweichungen in Abschnitt 16)
 
 Python-Desktopanwendung zur Auswertung von Indizierdaten (Zylinderdruck + PI-Stromsignal) für zwei
@@ -872,7 +874,7 @@ Kurbelwinkelspalten sind immer vorhanden (3.1).
 
 ---
 
-## 16. Umsetzungsstand (v1.0)
+## 16. Umsetzungsstand (v1.2)
 
 ### 16.1 Aufbau
 

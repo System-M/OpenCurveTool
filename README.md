@@ -1,16 +1,19 @@
 # Open Curve Tool
 
+**Deutsch** · [English](README.en.md)
+
 *Open-source desktop tool for combustion indicating analysis of two cylinders (High / Low):
 cylinder pressure, heat release, knock, knock sensor and injector/valve current. Python, PySide6
-and pyqtgraph; runs on Windows and Linux. The user interface is in English, this documentation in
-German.*
+and pyqtgraph; runs on Windows and Linux. The user interface is in English; the documentation is
+available in German and in English.*
 
 ![Open Curve Tool](referenz/opencurvetool_overview.png)
 
 Auswertung von Indizierdaten für zwei Zylinder („High“ und „Low“): Zylinderdruck, Heizverlauf,
 Klopfen, Klopfsensor und PI-Strom. Funktionsumfang und Bedienung sind an die klassische
 Concerto-Oberfläche angelehnt. Die vollständige Beschreibung steht in
-[SPEZIFIKATION.md](SPEZIFIKATION.md).
+[SPEZIFIKATION.md](SPEZIFIKATION.md) (maßgebliche Fassung; englische Übersetzung:
+[SPECIFICATION.en.md](SPECIFICATION.en.md)).
 
 > **Stand:** frühe Version. Geprüft wurde bisher ausschließlich mit synthetischen Messungen; der
 > Abgleich mit echten Messdaten und mit Concerto steht aus. Die voreingestellten Motordaten sind
@@ -89,7 +92,6 @@ python tests/make_testdata.py data/demo_150k.csv --fs 150000 --duration 4
 Zu jeder synthetischen Messung entsteht eine Datei `*_truth.json` mit den Sollwerten. Geprüft wurde
 bisher ausschließlich mit synthetischen Daten; der Abgleich mit einer echten Messung und mit
 Concerto steht aus.
-
 
 ## Lizenz und Hinweise
 
